@@ -31,7 +31,7 @@ const Checkout = () => {
 
     setIsLoading(true);
     try {
-      const res = await axios.post('http://localhost:5000/api/payment/initiate', formData);
+      const res = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/payment/initiate`, formData);
       
       // Open payment in new tab
       const paymentWindow = window.open(res.data.paymentUrl, '_blank');

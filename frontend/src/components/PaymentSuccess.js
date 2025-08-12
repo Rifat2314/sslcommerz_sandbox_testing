@@ -17,7 +17,7 @@ const PaymentSuccess = () => {
       try {
         if (!tranId) throw new Error('No transaction ID provided');
         
-        const response = await axios.get(`http://localhost:5000/api/payment/order/${tranId}`);
+        const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/payment/order/${tranId}`);
         
         if (!response.data) throw new Error('Order not found');
         
